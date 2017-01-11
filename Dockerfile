@@ -17,8 +17,10 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/li
 RUN chmod +x kubectl
 RUN mv kubectl /usr/bin/
 
+RUN apt-get update
+
 # Add python virtualenv
-RUN apt-get -y install python-pip
+RUN apt-get install -y python-pip
 RUN pip install virtualenv
 
 ENTRYPOINT ["jenkins-slave"]
