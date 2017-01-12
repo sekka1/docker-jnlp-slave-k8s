@@ -27,4 +27,7 @@ RUN pip install virtualenv
 RUN apt-get install -y npm nodejs-legacy
 RUN npm install -g jasmine-node
 
+# install junit
+RUN apt-get install -y junit
+
 ENTRYPOINT ["jenkins-slave"]
