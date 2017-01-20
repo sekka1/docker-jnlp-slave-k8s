@@ -30,4 +30,7 @@ RUN npm install -g jasmine-node
 # install junit
 RUN apt-get install -y junit
 
+# install bc - math expressions
+RUN apt-get install -y bc
+
 ENTRYPOINT ["jenkins-slave"]
