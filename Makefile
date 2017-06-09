@@ -22,7 +22,6 @@ build-gradle:
 push-gradle:
 	$(call push_docker_container,gradle,$(VERSION_GRADLE))
 
-
 #
 # Docker build def
 #
