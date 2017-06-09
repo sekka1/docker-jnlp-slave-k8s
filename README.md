@@ -8,6 +8,11 @@ A Jenkins slave for Kubernetes with additional utililies:
 * kubectl
 * python virtualenv
 
+## Kubernetes Jenkins Deployment
+There are a set of Kubernetes Jenkins deployment files in the `deployment` folder.
+
+There is one manual action.  You have to create a slave then manually populate the
+`JENKINS_SECRET` for each slave.
 
 ## Building and pushing a versioned container
 
