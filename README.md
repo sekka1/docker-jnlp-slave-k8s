@@ -3,10 +3,10 @@ Docker jnlp slave for Kubernetes
 
 # Supported tags and respective `Dockerfile` links
 ## allinone
-- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/releases/allinone/0.1/Dockerfile)
+- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/allinone/0.1/Dockerfile)
 
 ## gradle
-- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/releases/gradle/0.1/Dockerfile)
+- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/gradle/0.1/Dockerfile)
 
 # Description
 A Jenkins slave for Kubernetes with additional utililies:
