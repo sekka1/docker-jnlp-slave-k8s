@@ -8,7 +8,7 @@ REPO_BASENAME = docker-jnlp-slave-k8s
 # all
 #
 build-allinone:
-	$(call build_docker_container,./all/Dockerfile,allinone,$(VERSION_ALLINONE))
+	$(call build_docker_container,./allinone/Dockerfile,allinone,$(VERSION_ALLINONE))
 
 push-allinone:
 	$(call push_docker_container,allinone,$(VERSION_ALLINONE))
