@@ -1,0 +1,63 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+      annotations:
+        pod.alpha.kubernetes.io/initialized: "true"
+        pod.alpha.kubernetes.io/init-containers: '[
+            {
+                "name": "install",
+                "image": "alpine:3.4",
+                "imagePullPolicy": "Always",
+                "command": ["sh", "-c", "mkdir /home/jenkins; chmod 777 /home/jenkins"],
+                "volumeMounts": [
+                    {
+                        "name": "datadir",
+                        "mountPath": "/home"
+                    }
+                ]
+            }
+        ]'
+    spec:
+      containers:
+      - name: jenkins
+        image: jenkins:2.46.2-alpine
+
+        env:
+          - name: JENKINS_HOME
+            value: "/home/jenkins"
+
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 50000
+          name: jnlp
+
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "8Gi"
+            cpu: "4000m"
+
+        volumeMounts:
+        - name: datadir
+          mountPath: /home
+
+      # EFS volume map
+      volumes:
+        - name: datadir
+          persistentVolumeClaim:
+            claimName: efs-k8s-jenkins

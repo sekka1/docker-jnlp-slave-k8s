@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins
+  annotations:
+    # lego ssl cert
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+    # Whitelist doc: https://github.com/kubernetes/ingress/blob/master/controllers/nginx/configuration.md#whitelist-source-range
+    # github whitelist: https://help.github.com/articles/github-s-ip-addresses/
+    #ingress.kubernetes.io/whitelist-source-range: "192.30.252.0/22,172.0.0.0/8,10.0.0.0/8,184.0.0.0/8"
+spec:
+  tls:
+  - hosts:
+    - jenkins.k8s.example.io
+    secretName: jenkins.tls
+  rules:
+  - host: jenkins.k8s.example.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins
+          servicePort: 8080
