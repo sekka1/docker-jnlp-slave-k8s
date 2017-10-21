@@ -23,6 +23,15 @@ push-gradle:
 	$(call push_docker_container,gradle,$(VERSION_GRADLE))
 
 #
+# k8s
+#
+build-k8s:
+	$(call build_docker_container,./k8s/Dockerfile,k8s,$(VERSION_K8S))
+
+push-k8s:
+	$(call push_docker_container,k8s,$(VERSION_K8S))
+
+#
 # Docker build def
 #
 define build_docker_container
