@@ -72,3 +72,36 @@ All in one
 #### Contains
 
 * Ansible
+
+# Usage:
+
+## Docker container
+In the Jenkins UI, add a new node.  Name it the same as this param `JENKINS_SLAVE_NODE_NAME` below.
+
+It will give you a secret.  Replace the `JENKINS_SECRET`
+
+```
+export SLAVE_NAME=k8s
+export SLAVE_VERSION=0.1
+export JENKINS_SLAVE_NODE_NAME=worker-k8s-1
+export JENKINS_URL=http://jenkins.example.com
+export JENKINS_SECRET=d1574b02fd1e0c623055e3e9c515d6d15cec9a442b51b2c3d87fc7b8ce2406a9
+
+docker run -d \
+--name ${JENKINS_SLAVE_NODE_NAME} \
+-e JENKINS_SECRET=${JENKINS_SECRET} \
+-e JENKINS_NAME=${JENKINS_SLAVE_NODE_NAME} \
+-e JENKINS_LOCATION_URL=${JENKINS_URL} \
+-e JENKINS_URL=${JENKINS_URL} \
+-e JENKINS_JNLP_URL=${JENKINS_URL}/computer/${JENKINS_SLAVE_NODE_NAME}/slave-agent.jnlp \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /var/lib/docker/jenkins-scratch:/var/lib/docker/jenkins-scratch \
+garland/docker-jnlp-slave-k8s:${SLAVE_NAME}-${SLAVE_VERSION} ${JENKINS_SECRET} ${JENKINS_SLAVE_NODE_NAME}
+```
+
+## Kubernetes
+In the Jenkins UI, add a new node.
+
+You will have to replace the `JENKINS_SECRET` and `JENKINS_NAME` in the k8s yaml files.
+
+Here is an example of the kubernetes deployment file: https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/deployment/jenkins_kubernetes/slaves/gradle/1/deployment.yaml
