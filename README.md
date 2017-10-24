@@ -10,6 +10,12 @@ Docker jnlp slave for Kubernetes
 ### gradle
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/gradle/0.1/Dockerfile)
 
+### k8s
+- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/k8s/0.1/Dockerfile)
+
+### Ansible
+- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/ansible/0.1/Dockerfile)
+
 # Description
 A Jenkins slave for Kubernetes with additional utililies:
 
