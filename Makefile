@@ -32,6 +32,15 @@ push-k8s:
 	$(call push_docker_container,k8s,$(VERSION_K8S))
 
 #
+# Ansible
+#
+build-ansible:
+	$(call build_docker_container,./ansible/Dockerfile,ansible,$(VERSION_ANSIBLE))
+
+push-ansible:
+	$(call push_docker_container,ansible,$(VERSION_ANSIBLE))
+
+#
 # Docker build def
 #
 define build_docker_container
