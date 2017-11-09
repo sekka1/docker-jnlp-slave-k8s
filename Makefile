@@ -41,6 +41,15 @@ push-ansible:
 	$(call push_docker_container,ansible,$(VERSION_ANSIBLE))
 
 #
+# aws
+#
+build-aws:
+	$(call build_docker_container,./aws/Dockerfile,aws,$(VERSION_AWS))
+
+push-aws:
+	$(call push_docker_container,aws,$(VERSION_AWS))
+
+#
 # Docker build def
 #
 define build_docker_container
