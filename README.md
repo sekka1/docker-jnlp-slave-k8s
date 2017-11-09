@@ -16,6 +16,9 @@ Docker jnlp slave for Kubernetes
 ### Ansible
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/ansible/0.1/Dockerfile)
 
+### Aws
+- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/aws/0.1/Dockerfile)
+
 # Description
 A Jenkins slave for Kubernetes with additional utililies:
 
@@ -72,6 +75,12 @@ All in one
 #### Contains
 
 * Ansible
+
+### AWS
+
+#### Contains
+
+* aws-cli
 
 # Usage:
 
