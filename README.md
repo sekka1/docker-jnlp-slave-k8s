@@ -6,6 +6,7 @@ Docker jnlp slave for Kubernetes
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/allinone/0.1/Dockerfile)
 - [`0.2` (*0.2/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/allinone/0.2/Dockerfile)
 - [`0.3` (*0.3/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/allinone/0.3/Dockerfile)
+- [`0.4` (*0.4/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/allinone/0.4/Dockerfile)
 
 ### gradle
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/gradle/0.1/Dockerfile)
@@ -55,6 +56,8 @@ All in one
 * junit
 * bc
 * helm
+* AWS CLI
+* zip
 
 ### gradle
 
