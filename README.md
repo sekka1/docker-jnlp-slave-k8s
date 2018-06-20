@@ -13,6 +13,7 @@ Docker jnlp slave for Kubernetes
 
 ### k8s
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/k8s/0.1/Dockerfile)
+- [`0.2` (*0.2/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/k8s/0.2/Dockerfile)
 
 ### Ansible
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/ansible/0.1/Dockerfile)
