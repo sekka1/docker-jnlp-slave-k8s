@@ -50,6 +50,14 @@ push-aws:
 	$(call push_docker_container,aws,$(VERSION_AWS))
 
 #
+# Chrome headless
+#
+build-chromeheadless:
+	$(call build_docker_container,./chromeheadless/Dockerfile,chromeheadless,$(VERSION_CHROME_HEADLESS))
+push-chromeheadless:
+	$(call push_docker_container,chromeheadless,$(VERSION_CHROME_HEADLESS))
+
+#
 # Docker build def
 #
 define build_docker_container

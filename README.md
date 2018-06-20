@@ -21,6 +21,9 @@ Docker jnlp slave for Kubernetes
 ### Aws
 - [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/aws/0.1/Dockerfile)
 
+## Chrome Headless
+- [`0.1` (*0.1/Dockerfile*)](https://github.com/sekka1/docker-jnlp-slave-k8s/blob/master/releases/chromeheadless/0.1/Dockerfile)
+
 # Description
 A Jenkins slave for Kubernetes with additional utililies:
 
